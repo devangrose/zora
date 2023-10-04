@@ -1,10 +1,10 @@
-import UnsplashColors from "../enums/UnsplashColors";
+import { UnsplashColors, UnsplashSorting } from "../enums/Unsplash";
 
 type SearchParameters = {
   query: string;
   page: number;
   per_page: number = 10;
-  order_by: 'relevant' | 'latest';
+  order_by: UnsplashSorting;
   color: UnsplashColors | null;
 }
 

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import callSearch from "../../api/CallSearch";
+import { UnsplashSorting } from "../enums/Unsplash";
 import { Photo, SearchParameters } from "../types/Search";
 
 const defaultSearchParameters: SearchParameters = {
   query: '',
   page: 1,
   per_page: 10,
-  order_by: 'relevant',
+  order_by: UnsplashSorting.RELEVANT,
   color: null,
 }
 
@@ -36,7 +37,6 @@ const useGridState = () => {
     }
   }
 
-  // first fetch of default values
   useEffect(() => {
     fetchPhotos();
   }, [searchParameters]);
