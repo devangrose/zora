@@ -8,7 +8,7 @@ interface FilterProps {
 }
 
 const FilterWrapper = styled.div`
-
+  witdh: 100%;
 `
 
 const Filter = ({updateGridState}: FilterProps) => {
