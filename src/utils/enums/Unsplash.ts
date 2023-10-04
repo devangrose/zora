@@ -9,7 +9,7 @@ enum UnsplashColors {
   MAGENTA = "magenta", 
   GREEN = "green", 
   TEAL = "teal",
-  BLUE = "blue"
+  BLUE = "blue",
 }
 
 enum UnsplashSorting {

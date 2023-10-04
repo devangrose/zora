@@ -6,7 +6,7 @@ import { Photo, SearchParameters } from "../types/Search";
 const defaultSearchParameters: SearchParameters = {
   query: '',
   page: 1,
-  per_page: 10,
+  per_page: 9,
   order_by: UnsplashSorting.RELEVANT,
   color: null,
 }
@@ -65,7 +65,6 @@ const useGridState = () => {
     loading,
     pageCount,
   }
-
 }
 
 export default useGridState
