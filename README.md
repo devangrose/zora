@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+## Unsplash Search UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Initial Setup
+- Clone this repository
+- Run `yarn install`
 
-## Available Scripts
+#### Running in dev mode 
+- Run `yarn start`
 
-In the project directory, you can run:
+#### Running in production mode
+I've created a simple dockerfile to build and run a production environment. 
 
-### `npm start`
+- Run `docker build -t devan-frontend .`
+- Run `docker run -p 3000:80 devan-frontend`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Notable Things and Things I would have done given more time 
+- I added the .env files to git for brevity and ease, usually these are left out of git repositories
+- I had a lot of fun using typescript enums to enforce things like my MapToLabel objects, if an enum entry is added or removed it'll cause an error unless its updated
+- Testing! I ran out of time for any testing
+    - Generally, my rule of thumb when writing tests is to write a test when conditional logic exists or an effect is triggered
+    - In this case I would have written
+        - Empty results text shows when no photos are available
+        - Loading shows when loading
+        - Sorting and filtering changes reset page number
+        - Debounce and requery effectiveness
+- Maybe use some kind of masonry component to make the grid look really nice
+- Clean up build warnings 
